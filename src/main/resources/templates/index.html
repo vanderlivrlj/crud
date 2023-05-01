@@ -1,0 +1,32 @@
+<head th:replace="~{base :: head}">
+</head>
+
+<body>
+
+<div class="container mb-2">
+    <h1>Pessoas</h1>
+    <table class="table table-light">
+        <tr class="table-dark">
+            <th></th>
+            <th scope="col">Nome</th>
+            <th scope="col">Idade</th>
+            <th scope="col"></th>
+        </tr>
+
+        <tr th:each="pessoa : ${pessoas}">
+            <th scope="row"></th>
+            <td><span th:text="${pessoa.nome}"></span></td>
+            <td><span th:text="${pessoa.idade}"></span></td>
+            <td class="buttons "><a th:href="@{form/{id}(id=${pessoa.id})}"
+                                    th:method="get" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <a th:href="@{delete/{id}(id=${pessoa.id})}" th:method="delete"
+                   class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+        </tr>
+    </table>
+
+    <a href="/form"><button class="btn btn-dark">Adicionar
+        pessoa</button></a>
+</div>
+</body>
+
+</html>

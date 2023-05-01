@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{base :: head}">
+</head>
+
+<body>
+
+<div class="container">
+  <h1 class="mb-3">Atualizar dados</h1>
+  <form action="/index" th:object="${pessoa}" th:action="@{/update/{id}(id=${pessoa.id})}" method="post">
+
+    <div th:replace="~{base :: form}"></div>
+
+    <div class="col-12 mt-2">
+      <button type="submit" class="btn btn-dark">Atualizar</button>
+    </div>
+  </form>
+</div>
+
+</body>
+
+</html>
